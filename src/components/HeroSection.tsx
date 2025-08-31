@@ -28,7 +28,7 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-accent-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-          India's first youth-led index tracking the 90% working in the informal economy.
+
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
