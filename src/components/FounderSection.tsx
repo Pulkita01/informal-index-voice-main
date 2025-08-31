@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
+
 const FounderSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -29,18 +30,16 @@ const FounderSection = () => {
           <Card className="bg-oxford-blue border-glaucous/20 overflow-hidden">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2 gap-0">
-                {/* Photo Placeholder */}
+                
+                {/* Founder Photo */}
                 <motion.div 
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="relative bg-glaucous/10 flex items-center justify-center h-96 md:h-full"
+                  className="relative flex items-center justify-center h-96 md:h-full bg-glaucous/10"
                 >
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-glaucous/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-glaucous text-sm">Photo Coming Soon</span>
-                    </div>
-                  </div>
+                  <img src="/founder.jpeg" alt="Founder" width={256} height={256} className="rounded-full object-cover" />
+
                 </motion.div>
                 
                 {/* Bio */}

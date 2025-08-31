@@ -11,18 +11,31 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+    <TooltipProvider children={""} />
+    <Toaster />
+    <Sonner />
+    
+    {/* Site-wide Background */}
+    <div className="relative min-h-screen">
+      {/* Background Image */}
+      <div
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat -z-10"
+        style={{ backgroundImage: "url(/lovable-uploads/background.jpeg)" }}
+      />
+      
+      {/* Overlay for opacity */}
+      <div className="fixed inset-0 bg-black/50 -z-10" />
+
+      {/* App content */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/story/:id" element={<StoryPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </TooltipProvider>
+    </div>
   </QueryClientProvider>
 );
 
